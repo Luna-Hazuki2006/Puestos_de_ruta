@@ -6,13 +6,28 @@
 //     p.name = m.name;
 // });
 // fs.writeFileSync(name, JSON.stringify(m));
-const compras = [];
+// const compras = [];
+localStorage.setItem('compras', JSON.stringify([]));
 const tabla = document.getElementById("boletos");
 const cedula = document.getElementById("tcedula");
 const nombres = document.getElementById("tnombres");
 const apellidos = document.getElementById("tapellidos");
-const boletos = [];
+// const boletos = [];
+localStorage.setItem('boletos', JSON.stringify([]));
+function darBoletos() {
+    return JSON.parse(localStorage.getItem('boletos'));
+}
+function guardarBoletos(boletos) {
+    localStorage.setItem('boletos', JSON.stringify(boletos));
+}
+function darCompras() {
+    return JSON.parse(localStorage.getItem('compras'));
+}
+function guardarCompras(compras) {
+    localStorage.setItem('compras', JSON.stringify(compras));
+}
 function añadir(numero) {
+    const boletos = darBoletos();
     if (boletos.length > 0) {
         for (let i = 0; i < boletos.length; i++) {
             if (boletos[i].numero == numero) {
@@ -26,14 +41,15 @@ function añadir(numero) {
         precio: 20
     };
     boletos.push(boleto);
-    localStorage.setItem("boletos", JSON.stringify(boletos));
+    guardarBoletos(boletos);
     llenar();
 }
 function sacar(numero) {
+    const boletos = darBoletos();
     for (let i = 0; i < boletos.length; i++) {
         if (boletos[i].numero == numero) {
-            boletos = boletos.splice(i, 1);
-            localStorage.setItem("boletos", JSON.stringify(boletos));
+            boletos.splice(i, 1);
+            guardarBoletos(boletos);
             break;
         }
     }
@@ -47,6 +63,7 @@ function llenar() {
         <th>Monto</th>
     </tr>
     `;
+    const boletos = darBoletos();
     let total = 0;
     for (let i = 0; i < boletos.length; i++) {
         total += boletos[i].precio;
@@ -65,6 +82,7 @@ function llenar() {
     `;
 }
 function sellar() {
+    const boletos = darBoletos();
     for (let i = 0; i < boletos.length; i++) {
         const numero = boletos[i].numero;
         const cuadro = document.getElementById(numero);
@@ -76,9 +94,11 @@ function comprar() {
     if (cedula.value.length > 0 && 
         nombres.value.length > 0 && 
         apellidos.value.length > 0) {
+        const boletos = darBoletos();
         const total = 0;
+        alert(boletos.length);
         for (let i = 0; i < boletos.length; i++) {
-            total += boletos[i].precio;
+            alert(i);
         }
         const compra = {
             cedula: cedula.value, 
@@ -87,9 +107,10 @@ function comprar() {
             boletos: boletos, 
             total: total
         }
+        const compras = darCompras();
         compras.push(compra);
         sellar();
-        boletos = [];
+        guardarBoletos([]);
         llenar();
     } else {
         alert("Todos los campos deben estar llenos para comprar asientos");
