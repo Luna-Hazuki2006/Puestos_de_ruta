@@ -121,6 +121,7 @@ function comprar() {
         nombres.value.length > 0 && 
         apellidos.value.length > 0) {
         const boletos = darBoletos();
+        if (boletos.length <= 0) return;
         let total = 0;
         for (let i = 0; i < boletos.length; i++) {
             total += boletos[i].precio;
