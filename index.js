@@ -87,7 +87,7 @@ function sellar() {
         const numero = boletos[i].numero;
         const cuadro = document.getElementById(numero);
         cuadro.classList.add('rosa');
-        cuadro.onclick = alert("Este puesto ya está ocupado");
+        cuadro.removeEventListener("click", añadir, false);
     }
 }
 function comprar() {
