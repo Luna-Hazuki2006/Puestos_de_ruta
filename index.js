@@ -96,7 +96,6 @@ function comprar() {
         apellidos.value.length > 0) {
         const boletos = darBoletos();
         let total = 0;
-        alert(boletos.length);
         for (let i = 0; i < boletos.length; i++) {
             total += boletos[i].precio;
         }
@@ -109,6 +108,10 @@ function comprar() {
         }
         const compras = darCompras();
         compras.push(compra);
+        guardarCompras(compras);
+        cedula.value = '';
+        nombres.value = '';
+        apellidos.value = '';
         sellar();
         guardarBoletos([]);
         llenar();
