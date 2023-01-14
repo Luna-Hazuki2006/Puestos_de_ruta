@@ -9,6 +9,7 @@
 // const compras = [];
 localStorage.setItem('compras', JSON.stringify([]));
 const tabla = document.getElementById("boletos");
+const compradores = document.getElementById("compras");
 const cedula = document.getElementById("tcedula");
 const nombres = document.getElementById("tnombres");
 const apellidos = document.getElementById("tapellidos");
@@ -80,6 +81,31 @@ function llenar() {
         <td class="negro">${total}$</td>
     </tr>
     `;
+    const compras = darCompras();
+    compradores.innerHTML = `
+    <tr>
+        <th>Compradores</th>
+        <th>Puestos</th>
+        <th>Pago total</th>
+    </tr>
+    `;
+    for (let i = 0; i < compras.length; i++) {
+        let lista = compras[i].boletos;
+        let nombres = compras[i].nombres + " " + compras[i].apellidos;
+        let puestos = "<ul>";
+        for (let j = 0; j < lista.length; j++) {
+            puestos += `<li>${lista[j].numero}</li>`;
+        }
+        puestos += '</ul>';
+        let pagos = compras[i].total;
+        compradores.innerHTML += `
+        <tr>
+            <td>${nombres}</td>
+            <td>${puestos}</td>
+            <td>${pagos}$</td>
+        </tr>
+        `;
+    }
 }
 function sellar() {
     const boletos = darBoletos();

@@ -30,6 +30,10 @@ td:hover {
     background-color: azure;
 }
 
+#compras td {
+    background-color: azure;
+}
+
 .negro {
     font-weight: bold;
     background-color: azure;
