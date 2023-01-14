@@ -1,0 +1,40 @@
+body {
+    background-color: azure;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.blanco {
+    background-color: azure;
+}
+
+td {
+    height: 40px;
+    width: 40px;
+    background-color: greenyellow;
+}
+
+.rosa {
+    background-color: lightpink;
+}
+
+td:hover {
+    background-color: lightpink;
+}
+
+.especial {
+    background-color: azure;
+}
+
+.negro {
+    font-weight: bold;
+    background-color: azure;
+}
+
+.especial:hover {
+    background-color: azure;
+}

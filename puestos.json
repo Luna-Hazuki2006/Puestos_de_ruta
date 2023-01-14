@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1, 
+        "ocupado": false
+    }, 
+    {
+        "id": 2, 
+        "ocupado": true
+    }, 
+    {
+        "id": 3, 
+        "ocupado": false
+    }
+]

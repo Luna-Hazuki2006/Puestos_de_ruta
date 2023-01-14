@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/hype.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Puestos del ruta</title>
+</head>
+<body>
+    <h1>Hola a todos</h1>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td id="4" onclick="añadir(4);">4</td>
+            <td id="8" onclick="añadir(8);">8</td>
+            <td id="12" onclick="añadir(12);">12</td>
+            <td id="16" onclick="añadir(16);">16</td>
+            <td id="17" onclick="añadir(17);">20</td>
+            <td id="24" onclick="añadir(24);">24</td>
+        </tr>
+        <tr>
+            <td id="3" onclick="añadir(3);">3</td>
+            <td id="7" onclick="añadir(7);">7</td>
+            <td id="11" onclick="añadir(11);">11</td>
+            <td id="15" onclick="añadir(15);">15</td>
+            <td id="19" onclick="añadir(19);">19</td>
+            <td id="23" onclick="añadir(23);">23</td>
+        </tr>
+        <tr>
+            <td class="especial" colspan="6"></td>
+        </tr>
+        <tr>
+            <td id="2" onclick="añadir(2);">2</td>
+            <td id="6" onclick="añadir(6);">6</td>
+            <td id="10" onclick="añadir(10);">10</td>
+            <td id="14" onclick="añadir(14);">14</td>
+            <td id="18" onclick="añadir(18);">18</td>
+            <td id="22" onclick="añadir(22);">22</td>
+        </tr>
+        <tr>
+            <td id="1" onclick="añadir(1);">1</td>
+            <td id="5" onclick="añadir(5);">5</td>
+            <td id="9" onclick="añadir(9);">9</td>
+            <td id="13" onclick="añadir(13);">13</td>
+            <td id="17" onclick="añadir(17);">17</td>
+            <td id="21" onclick="añadir(21);">21</td>
+        </tr>
+    </table>
+    <br>
+    <form>
+        <label for="tcedula">Cédula:</label>
+        <input type="text" name="tcedula" id="tcedula"><br><br>
+        <label for="tnombres">Nombres:</label>
+        <input type="text" name="tnombres" id="tnombres"><br><br>
+        <label for="tapellidos">Apellidos:</label>
+        <input type="text" name="tapellidos" id="tapellidos"><br><br>
+        <p>Dale un doble click al puesto que quieras quitar ;)</p>
+        <table id="boletos">
+            <tr>
+                <th>Número</th>
+                <th>Monto</th>
+            </tr>
+        </table>
+        <br>
+        <input onclick="comprar();" type="button" value="Comprar boletos">
+    </form>
+    <section id="compras">
+    </section>
+</body>
+</html>
