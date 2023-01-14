@@ -84,10 +84,10 @@ function llenar() {
 function sellar() {
     const boletos = darBoletos();
     for (let i = 0; i < boletos.length; i++) {
-        const numero = boletos[i].numero;
-        const cuadro = document.getElementById(numero);
+        let numero = boletos[i].numero;
+        let cuadro = document.getElementById(numero);
         cuadro.classList.add('rosa');
-        cuadro.removeEventListener("click", añadir, false);
+        cuadro.removeAttribute("onclick");
     }
 }
 function comprar() {
@@ -95,10 +95,10 @@ function comprar() {
         nombres.value.length > 0 && 
         apellidos.value.length > 0) {
         const boletos = darBoletos();
-        const total = 0;
+        let total = 0;
         alert(boletos.length);
         for (let i = 0; i < boletos.length; i++) {
-            alert(i);
+            total += boletos[i].precio;
         }
         const compra = {
             cedula: cedula.value, 
