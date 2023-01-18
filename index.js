@@ -146,3 +146,21 @@ function comprar() {
         alert("Todos los campos deben estar llenos para comprar asientos");
     }
 }
+function intentar() {
+    // var element = document.createElement('a');
+    // element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(darCompras())));
+    // element.setAttribute('download', 'myfile');
+
+    // element.style.display = 'none';
+    // document.body.appendChild(element);
+
+    // element.click();
+
+    // document.body.removeChild(element);
+    const fs = require("fs");
+    var data = fs.readFileSync('puestos.json');
+    var json = JSON.parse(data);
+    json.push({"nombre": "tú"});
+
+    fs.writeFile("puestos.json", JSON.stringify(json))
+}

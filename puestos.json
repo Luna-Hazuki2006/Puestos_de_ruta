@@ -1,14 +1,22 @@
 [
     {
-        "id": 1, 
-        "ocupado": false
-    }, 
-    {
-        "id": 2, 
-        "ocupado": true
-    }, 
-    {
-        "id": 3, 
-        "ocupado": false
+        "cedula": "31973145", 
+        "nombres": "Ana Paula", 
+        "apellidos": "Mendoza Díaz", 
+        "boletos": [
+            {
+                "numero": 1, 
+                "precio": 20
+            }, 
+            {
+                "numero": 2, 
+                "precio": 20
+            }, 
+            {
+                "numero": 3, 
+                "precio": 20
+            }
+        ], 
+        "total": 60
     }
 ]
